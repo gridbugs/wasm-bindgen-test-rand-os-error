@@ -1,0 +1,15 @@
+language: rust
+matrix:
+  include:
+  - os: linux
+    rust: stable
+before_script:
+  - cargo install wasm-bindgen-cli
+  - cargo install wasm-pack
+  - rustup target add wasm32-unknown-unknown
+script:
+  - cargo build --target wasm32-unknown-unknown
+  - wasm-bindgen --nodejs target/wasm32-unknown-unknown/debug/foo.wasm --out-dir js
+  - node js/index.js
+  - wasm-pack test --node
+

@@ -1,7 +1,7 @@
 [![Travis-CI Status](https://travis-ci.org/stevebob/wasm-bindgen-test-rand-os-error.svg?branch=master)](https://travis-ci.org/stevebob/wasm-bindgen-test-rand-os-error)
 
 Building this crate produces a wasm file which can be successfully `require`d
-by a nodejs file. Running `wasm-pack test --nodejs` on this crate produces the
+by a nodejs file. Running `wasm-pack test --node` on this crate produces the
 following output:
 
 ```
